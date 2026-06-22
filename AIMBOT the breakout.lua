@@ -390,7 +390,7 @@ addToggle("espShowDistance", "Distance", config.espShowDistance)
 ToggleButton.MouseButton1Click:Connect(function() MainFrame.Visible = not MainFrame.Visible end)
 closeBtn.MouseButton1Click:Connect(function() MainFrame.Visible = false end)
 
--- ===================== LOGIC AIMBOT & ESP =====================
+-- 
 local zombieCache = {}
 local lastCacheTime = 0
 local lockedTarget = nil
@@ -757,6 +757,9 @@ end)
 LocalPlayer.CharacterAdded:Connect(function()
     repeat task.wait() until LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
     Camera = Workspace.CurrentCamera
+    lastCacheTime = 0
+    unlockTarget()
+end)ce.CurrentCamera
     lastCacheTime = 0
     unlockTarget()
 end)
